@@ -1,0 +1,205 @@
+[
+    {
+        "id": "0defb6351bdaa4ac",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d684b423a6c9c402",
+        "type": "mqtt in",
+        "z": "0defb6351bdaa4ac",
+        "name": "Data",
+        "topic": "fiap/iot/temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "9c6791e4277df731",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 390,
+        "y": 180,
+        "wires": [
+            [
+                "0f3b5baefdabcb88",
+                "e6d6b381aaf7c8c1"
+            ]
+        ]
+    },
+    {
+        "id": "e6d6b381aaf7c8c1",
+        "type": "ui_text",
+        "z": "0defb6351bdaa4ac",
+        "group": "29d6b86ce972add0",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "Temperatura",
+        "label": "°C",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 570,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "a20d538ddb982243",
+        "type": "ui_gauge",
+        "z": "0defb6351bdaa4ac",
+        "name": "Humidade",
+        "group": "29d6b86ce972add0",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidade",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 560,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "c8832803f44a21b6",
+        "type": "ui_gauge",
+        "z": "0defb6351bdaa4ac",
+        "name": "Estoque",
+        "group": "29d6b86ce972add0",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Estoque",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 560,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "86f1bfee14bc932e",
+        "type": "mqtt in",
+        "z": "0defb6351bdaa4ac",
+        "name": "Data",
+        "topic": "fiap/iot/humidity",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "9c6791e4277df731",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 390,
+        "y": 240,
+        "wires": [
+            [
+                "0f3b5baefdabcb88",
+                "a20d538ddb982243"
+            ]
+        ]
+    },
+    {
+        "id": "f55bfa6e5d0ea0d2",
+        "type": "mqtt in",
+        "z": "0defb6351bdaa4ac",
+        "name": "Data",
+        "topic": "fiap/iot/distancePercentage",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "9c6791e4277df731",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 390,
+        "y": 300,
+        "wires": [
+            [
+                "0f3b5baefdabcb88",
+                "c8832803f44a21b6"
+            ]
+        ]
+    },
+    {
+        "id": "0f3b5baefdabcb88",
+        "type": "debug",
+        "z": "0defb6351bdaa4ac",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "9c6791e4277df731",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mqtt-dashboard.com",
+        "port": "1883",
+        "clientid": "receiver",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "29d6b86ce972add0",
+        "type": "ui_group",
+        "name": "Monitoramento de Estoque",
+        "tab": "a84245b79eed2b58",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "a84245b79eed2b58",
+        "type": "ui_tab",
+        "name": "Info",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
